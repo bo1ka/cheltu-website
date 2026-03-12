@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheltu — Scanează bonuri. Urmărește cheltuieli.</title>
+    <meta name="description" content="Cheltu transformă bonurile tale într-o imagine clară a cheltuielilor. Fără cont. Fără cloud. 100% privat.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #34C759;
+            --green-dark: #2AA84A;
+            --green-light: #E8F9ED;
+            --bg: #FAFBFC;
+            --text: #1A1A2E;
+            --text-secondary: #6B7280;
+            --card-bg: #FFFFFF;
+            --border: #E5E7EB;
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---- NAV ---- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 251, 252, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .nav-logo {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-logo .dot {
+            width: 10px;
+            height: 10px;
+            background: var(--green);
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+
+        /* ---- HERO ---- */
+        .hero {
+            padding: 140px 24px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(52, 199, 89, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--green-light);
+            color: var(--green-dark);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+            letter-spacing: 0.02em;
+        }
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+            color: var(--text);
+        }
+        .hero h1 span { color: var(--green); }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin: 0 auto 36px;
+            line-height: 1.6;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--text);
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .hero-cta svg { width: 20px; height: 20px; }
+
+        .hero-pills {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            padding: 0 16px;
+        }
+        .pill {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 8px 16px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .pill .icon { font-size: 15px; }
+
+        /* ---- FEATURES ---- */
+        .features {
+            padding: 80px 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .features-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .features-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .features-header p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        .feature-icon.scan { background: #EEF6FF; }
+        .feature-icon.budget { background: var(--green-light); }
+        .feature-icon.analytics { background: #FFF3E0; }
+        .feature-icon.organize { background: #F3E8FF; }
+        .feature-icon.privacy { background: #E8F5E9; }
+        .feature-icon.export { background: #FFF8E1; }
+        .feature-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ---- PRIVACY BANNER ---- */
+        .privacy-banner {
+            max-width: 960px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+        }
+        .privacy-banner-inner {
+            background: var(--text);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 48px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .privacy-banner-icon {
+            font-size: 48px;
+            flex-shrink: 0;
+        }
+        .privacy-banner h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .privacy-banner p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* ---- SUPPORT ---- */
+        .support {
+            padding: 80px 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .support h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .support > p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 36px;
+        }
+        .support-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .support-card .email-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--green-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        .support-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+        .support-card a {
+            color: var(--green-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
+        .support-card a:hover { text-decoration: underline; }
+        .support-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        /* ---- PRIVACY POLICY ---- */
+        .privacy-policy {
+            padding: 80px 24px;
+            max-width: 960px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border);
+        }
+        .privacy-policy h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .privacy-policy .updated {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+        .privacy-section {
+            margin-bottom: 28px;
+        }
+        .privacy-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .privacy-section p, .privacy-section ul {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .privacy-section ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        .privacy-section li { margin-bottom: 4px; }
+
+        /* ---- FOOTER ---- */
+        footer {
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        footer p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 768px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .privacy-banner-inner {
+                flex-direction: column;
+                text-align: center;
+                padding: 36px 24px;
+                gap: 16px;
+            }
+            .support-card { flex-direction: column; }
+            .nav-links { gap: 16px; }
+        }
+        @media (max-width: 480px) {
+            .nav-links a { font-size: 13px; }
+            .hero { padding: 120px 16px 60px; }
+        }
+
+        /* ---- ANIMATIONS ---- */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-badge, .hero h1, .hero p, .hero-cta, .hero-pills {
+            animation: fadeUp 0.6s ease-out both;
+        }
+        .hero h1 { animation-delay: 0.1s; }
+        .hero p { animation-delay: 0.2s; }
+        .hero-cta { animation-delay: 0.3s; }
+        .hero-pills { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="nav-logo"><span class="dot"></span> Cheltu</a>
+            <div class="nav-links">
+                <a href="#features">Funcții</a>
+                <a href="#support">Suport</a>
+                <a href="#privacy">Confidențialitate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">📱 Disponibil pe App Store</div>
+        <h1>Știi exact pe ce<br>se duc <span>banii</span> tăi</h1>
+        <p>Scanează bonuri fiscale, urmărește cheltuielile și preia controlul bugetului tău lunar. Totul pe telefonul tău.</p>
+        <a href="https://apps.apple.com/app/cheltu" class="hero-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Descarcă din App Store
+        </a>
+        <div class="hero-pills">
+            <span class="pill"><span class="icon">🔒</span> Fără cont</span>
+            <span class="pill"><span class="icon">📷</span> Scanare OCR</span>
+            <span class="pill"><span class="icon">📊</span> Analize</span>
+            <span class="pill"><span class="icon">💰</span> Buget lunar</span>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+        <div class="features-header">
+            <h2>Tot ce ai nevoie</h2>
+            <p>De la scanare la analize — într-o singură aplicație.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon scan">📷</div>
+                <h3>Scanare Inteligentă</h3>
+                <p>Fotografiază bonul fiscal, iar Cheltu extrage automat comerciantul, produsele și totalul.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon budget">💰</div>
+                <h3>Buget Lunar</h3>
+                <p>Setează un buget în Lei și urmărește progresul în timp real pe parcursul lunii.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon analytics">📊</div>
+                <h3>Analize Detaliate</h3>
+                <p>Rapoarte săptămânale, lunare și anuale cu grafice pe categorii și comparații.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon organize">🗂️</div>
+                <h3>Organizare Simplă</h3>
+                <p>Toate bonurile într-un singur loc. Caută după comerciant, categorie sau CIF.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon privacy">🔒</div>
+                <h3>Privat prin Design</h3>
+                <p>Fără cont, fără email. Toate datele rămân pe telefonul tău, fără excepții.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon export">⭐</div>
+                <h3>Cheltu Pro</h3>
+                <p>Analize extinse, backup iCloud și export de date pentru control complet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIVACY BANNER -->
+    <div class="privacy-banner">
+        <div class="privacy-banner-inner">
+            <div class="privacy-banner-icon">🛡️</div>
+            <div>
+                <h3>Fără cont. Fără email. Fără parolă.</h3>
+                <p>Cheltu funcționează complet offline. Datele tale nu părăsesc telefonul — nu le colectăm, nu le vindem, nu le trimitem nicăieri. Tu deții controlul total.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUPPORT -->
+    <section class="support" id="support">
+        <h2>Suport</h2>
+        <p>Ai o întrebare sau o sugestie? Scrie-ne și îți răspundem cât mai repede.</p>
+        <div class="support-card">
+            <div class="email-icon">✉️</div>
+            <div>
+                <h3>Email</h3>
+                <a href="mailto:cheltuapp@gmail.com">cheltuapp@gmail.com</a>
+                <p>Răspundem de obicei în 24-48 de ore.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIVACY POLICY -->
+    <section class="privacy-policy" id="privacy">
+        <h2>Politica de Confidențialitate</h2>
+        <p class="updated">Ultima actualizare: Martie 2026</p>
+
+        <div class="privacy-section">
+            <h3>Introducere</h3>
+            <p>Cheltu („aplicația") este dezvoltată de Adrian Muresan. Această politică de confidențialitate explică modul în care aplicația tratează datele utilizatorilor.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h3>Date colectate</h3>
+            <p>Cheltu nu colectează, nu stochează și nu transmite date personale către niciun server extern. Toate datele generate de utilizator — inclusiv bonurile scanate, categoriile, bugetul și preferințele — sunt stocate exclusiv pe dispozitivul utilizatorului.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h3>Procesare locală</h3>
+            <p>Recunoașterea textului (OCR) se realizează complet pe dispozitiv folosind framework-ul Apple Vision. Nicio imagine sau text extras nu este trimis către servere externe.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h3>Servicii terțe</h3>
+            <p>Aplicația utilizează următoarele servicii terțe:</p>
+            <ul>
+                <li><strong>Firebase Analytics & Crashlytics</strong> — pentru analize anonimizate de utilizare și raportare de erori. Aceste servicii pot colecta date anonimizate precum tipul de dispozitiv, versiunea de iOS și evenimente de utilizare. Nu sunt colectate date personale identificabile.</li>
+                <li><strong>openapi.ro</strong> — pentru consultarea registrului CAEN pe baza CIF-ului comerciantului. Se transmite doar codul CIF, fără date personale.</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h3>iCloud Backup (Pro)</h3>
+            <p>Funcția de backup iCloud, disponibilă în versiunea Pro, utilizează contul iCloud al utilizatorului pentru stocarea unei copii de siguranță. Datele sunt gestionate de Apple conform politicii de confidențialitate Apple și nu sunt accesibile dezvoltatorului.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h3>Fără conturi</h3>
+            <p>Cheltu nu necesită și nu oferă funcționalitate de creare a unui cont. Nu se colectează adrese de email, numere de telefon sau alte date de identificare.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h3>Modificări ale politicii</h3>
+            <p>Orice modificare a acestei politici va fi publicată pe această pagină cu data actualizării. Continuarea utilizării aplicației după publicarea modificărilor constituie acceptarea noii politici.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h3>Contact</h3>
+            <p>Pentru orice întrebări legate de confidențialitate, ne poți contacta la <a href="mailto:cheltuapp@gmail.com" style="color: var(--green-dark);">cheltuapp@gmail.com</a>.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Adrian Muresan. Toate drepturile rezervate.</p>
+    </footer>
+
+</body>
+</html>

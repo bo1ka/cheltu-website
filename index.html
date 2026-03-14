@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheltu — Scanează bonuri. Urmărește cheltuieli.</title>
     <meta name="description" content="Cheltu transformă bonurile tale într-o imagine clară a cheltuielilor. Fără cont. Fără cloud. 100% privat.">
+    <meta property="og:title" content="Cheltu — Scanează bonuri. Urmărește cheltuieli.">
+    <meta property="og:description" content="Cheltu transformă bonurile tale într-o imagine clară a cheltuielilor. Fără cont. Fără cloud. 100% privat.">
+    <meta property="og:locale" content="ro_RO">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cheltu.ro">
+    <meta property="og:site_name" content="Cheltu">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cheltu — Scanează bonuri. Urmărește cheltuieli.">
+    <meta name="twitter:description" content="Fără cont. Fără email. Fără parolă. Toate datele rămân pe telefonul tău.">
+    <meta name="keywords" content="cheltuieli, bonuri, scanare bon, buget personal, economii, urmărire cheltuieli, aplicație bonuri, România">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
@@ -271,7 +281,7 @@
 
         /* ---- GALLERY ---- */
         .gallery {
-            padding: 20px 24px 80px;
+            padding: 20px 24px 32px;
             max-width: 1060px;
             margin: 0 auto;
             overflow: hidden;
@@ -346,7 +356,7 @@
 
         /* ---- FEATURES ---- */
         .features {
-            padding: 80px 24px;
+            padding: 40px 24px 80px;
             max-width: 960px;
             margin: 0 auto;
         }
@@ -407,10 +417,101 @@
             line-height: 1.5;
         }
 
+        /* ---- PRICING ---- */
+        .pricing {
+            padding: 48px 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .pricing-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .pricing-header p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card.pro {
+            border: 2px solid var(--green);
+            position: relative;
+        }
+        .pricing-card.pro .pro-badge {
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: var(--green);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 100px;
+            letter-spacing: 0.03em;
+        }
+        .pricing-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .pricing-card .pricing-price {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+        }
+        .pricing-card ul li {
+            font-size: 15px;
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text);
+        }
+        .pricing-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 600;
+        }
+        .pricing-card ul li.disabled {
+            color: var(--text-secondary);
+            opacity: 0.45;
+        }
+        .pricing-card ul li.disabled::before {
+            content: '—';
+            color: var(--text-secondary);
+        }
+        @media (max-width: 640px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+
         /* ---- PRIVACY BANNER ---- */
         .privacy-banner {
             max-width: 960px;
-            margin: 0 auto 80px;
+            margin: 0 auto 40px;
             padding: 0 24px;
         }
         .privacy-banner-inner {
@@ -435,6 +536,130 @@
             font-size: 15px;
             color: rgba(255,255,255,0.7);
             line-height: 1.6;
+        }
+
+        /* ---- WHAT'S NEW ---- */
+        .whats-new {
+            padding: 48px 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .whats-new h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .whats-new > p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 36px;
+        }
+        .update-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 16px;
+        }
+        .update-item .update-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .update-item .update-version {
+            background: var(--green-light);
+            color: var(--green-dark);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 100px;
+        }
+        .update-item .update-date {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .update-item ul {
+            list-style: none;
+            padding: 0;
+        }
+        .update-item ul li {
+            font-size: 15px;
+            color: var(--text);
+            padding: 4px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+        .update-item ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        /* ---- FAQ ---- */
+        .faq {
+            padding: 48px 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .faq h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .faq > p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 36px;
+        }
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 20px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.2s;
+        }
+        .faq-question:hover {
+            background: var(--green-light);
+        }
+        .faq-question .faq-icon {
+            font-size: 18px;
+            color: var(--text-secondary);
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+        .faq-answer p {
+            padding: 0 24px 20px;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         /* ---- SUPPORT ---- */
@@ -575,6 +800,9 @@
             <a href="#" class="nav-logo"><span class="dot"></span> Cheltu</a>
             <div class="nav-links">
                 <a href="#features">Funcții</a>
+                <a href="#pricing">Pro</a>
+                <a href="#whats-new">Noutăți</a>
+                <a href="#faq">FAQ</a>
                 <a href="#support">Suport</a>
                 <a href="#privacy">Confidențialitate</a>
             </div>
@@ -598,12 +826,6 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
             Descarcă din App Store
         </a>
-        <div class="hero-pills">
-            <span class="pill"><span class="icon">🔒</span> Fără cont</span>
-            <span class="pill"><span class="icon">📷</span> Scanare OCR</span>
-            <span class="pill"><span class="icon">📊</span> Analize</span>
-            <span class="pill"><span class="icon">💰</span> Buget lunar</span>
-        </div>
     </section>
 
 
@@ -681,6 +903,43 @@
         </div>
     </section>
 
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-header">
+            <h2>Gratuit vs Pro</h2>
+            <p>Începe gratuit. Fă upgrade când ești gata.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Gratuit</h3>
+                <p class="pricing-price">Pentru totdeauna</p>
+                <ul>
+                    <li>Scanare bonuri nelimitată</li>
+                    <li>Buget lunar cu urmărire în timp real</li>
+                    <li>Analize săptămânale</li>
+                    <li>Widget pe ecranul principal</li>
+                    <li>Backup local pe telefon</li>
+                    <li class="disabled">Analize lunare și anuale</li>
+                    <li class="disabled">Comparații între perioade</li>
+                    <li class="disabled">Backup iCloud</li>
+                    <li class="disabled">Export CSV / PDF</li>
+                </ul>
+            </div>
+            <div class="pricing-card pro">
+                <span class="pro-badge">RECOMANDAT</span>
+                <h3>Cheltu Pro</h3>
+                <p class="pricing-price">9.99 RON / lună sau 59.99 RON / an</p>
+                <ul>
+                    <li>Tot ce e în versiunea gratuită</li>
+                    <li>Analize lunare și anuale</li>
+                    <li>Comparații între perioade</li>
+                    <li>Backup iCloud</li>
+                    <li>Export CSV / PDF</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- PRIVACY BANNER -->
     <div class="privacy-banner">
         <div class="privacy-banner-inner">
@@ -691,6 +950,103 @@
             </div>
         </div>
     </div>
+
+    <!-- WHAT'S NEW -->
+    <section class="whats-new" id="whats-new">
+        <h2>Noutăți</h2>
+        <p>Ultimele actualizări și îmbunătățiri aduse aplicației.</p>
+
+        <div class="update-item">
+            <div class="update-header">
+                <span class="update-version">v1.0.1</span>
+                <span class="update-date">Martie 2026</span>
+            </div>
+            <ul>
+                <li>Lansare oficială Cheltu</li>
+                <li>Scanare bonuri cu recunoaștere automată a comerciantului, produselor și totalului</li>
+                <li>Analize săptămânale, lunare și anuale</li>
+                <li>Buget lunar cu urmărire în timp real</li>
+                <li>Widget pe ecranul principal</li>
+                <li>Export date și backup iCloud (Pro)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <h2>Întrebări Frecvente</h2>
+        <p>Răspunsuri rapide la cele mai comune întrebări.</p>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Am nevoie de un cont?</span>
+                <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <div class="faq-answer">
+                <p>Nu. Cheltu funcționează fără cont, fără email și fără parolă. Instalezi și începi imediat.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Unde sunt stocate datele mele?</span>
+                <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <div class="faq-answer">
+                <p>Toate datele tale sunt stocate exclusiv pe telefonul tău. Cheltu nu are servere, nu trimite date nicăieri și nu accesează informațiile tale. Tu deții controlul total.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Ce se întâmplă dacă șterg aplicația?</span>
+                <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <div class="faq-answer">
+                <p>Dacă ștergi aplicația fără backup, datele se pierd. Cu Cheltu Pro, poți salva un backup în iCloud și îl poți restaura oricând la reinstalare.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Ce primesc cu Cheltu Pro?</span>
+                <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <div class="faq-answer">
+                <p>Cheltu Pro include analize extinse (lunare și anuale), backup iCloud și export de date. Analizele săptămânale și bugetul lunar sunt gratuite.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Funcționează fără internet?</span>
+                <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <div class="faq-answer">
+                <p>Da. Scanarea bonurilor, bugetul și analizele funcționează complet offline. Internetul este necesar doar pentru căutarea produselor după cod de bare.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Cum îmi recuperez datele?</span>
+                <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <div class="faq-answer">
+                <p>Poți crea un backup local direct pe telefon, fără abonament. Cu Cheltu Pro, ai și opțiunea de backup în iCloud. La reinstalare, restaurezi din backup și toate datele revin.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Pot exporta bonurile scanate?</span>
+                <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <div class="faq-answer">
+                <p>Da. Cu Cheltu Pro, poți exporta bonurile scanate în format CSV sau PDF. Exportul se poate face din Setări → Export Date pentru toate bonurile, sau direct de pe un bon deschis. Fișierele pot fi partajate prin AirDrop, Messages, WhatsApp, Notes, email, sau le poți copia, printa și salva în Fișiere.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- SUPPORT -->
     <section class="support" id="support">
@@ -732,7 +1088,7 @@
         </div>
 
         <div class="privacy-section">
-            <h3>Procesare OCR</h3>
+            <h3>Procesare OCR (Recunoaștere Optică a Caracterelor)</h3>
             <p>Recunoașterea textului de pe bonuri este realizată cu Apple Vision. Toată procesarea are loc local pe dispozitiv — nicio imagine sau text nu este trimis către servere externe.</p>
         </div>
 

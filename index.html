@@ -1098,81 +1098,166 @@
 
     <!-- PRIVACY POLICY -->
     <section class="privacy-policy" id="privacy">
-        <h2>Politica de Confidențialitate</h2>
-        <p class="updated">Ultima actualizare: Martie 2026</p>
+        <h2>Politica de Confidențialitate <span style="font-size: 16px; font-weight: 400; color: var(--text-secondary);">/ Privacy Policy</span></h2>
+        <p class="updated">Ultima actualizare / Last updated: Martie / March 2026</p>
 
-        <div class="privacy-section">
-            <h3>Colectarea Datelor</h3>
-            <p>Colectăm doar datele necesare pentru serviciul de scanare a bonurilor. Datele bonurilor tale sunt stocate local pe dispozitiv și opțional sincronizate cu contul tău personal iCloud.</p>
+        <div class="terms-lang-toggle">
+            <button class="terms-lang-btn active" onclick="switchPrivacyLang('ro')">🇷🇴 Română</button>
+            <button class="terms-lang-btn" onclick="switchPrivacyLang('en')">🇬🇧 English</button>
         </div>
 
-        <div class="privacy-section">
-            <h3>Utilizarea Datelor</h3>
-            <p>Datele bonurilor tale sunt utilizate exclusiv pentru funcționalitatea aplicației. Nu vindem, nu partajăm și nu transferăm datele tale personale către terți în scopuri de marketing.</p>
+        <!-- ROMANIAN -->
+        <div id="privacy-ro" class="terms-lang-content">
+            <div class="privacy-section">
+                <h3>Colectarea Datelor</h3>
+                <p>Colectăm doar datele necesare pentru serviciul de scanare a bonurilor. Datele bonurilor tale sunt stocate local pe dispozitiv și opțional sincronizate cu contul tău personal iCloud.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Utilizarea Datelor</h3>
+                <p>Datele bonurilor tale sunt utilizate exclusiv pentru funcționalitatea aplicației. Nu vindem, nu partajăm și nu transferăm datele tale personale către terți în scopuri de marketing.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Stocarea Datelor</h3>
+                <p>Toate datele bonurilor sunt stocate în siguranță pe dispozitivul tău și opțional în contul tău personal iCloud. Nu avem acces la datele tale.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Cameră și Fotografii</h3>
+                <p>Aplicația folosește camera pentru a scana bonuri și coduri de bare. Fotografiile sunt procesate pe dispozitiv și nu sunt încărcate pe niciun server. Poți salva opțional fotografiile scanate în biblioteca foto.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Procesare OCR (Recunoaștere Optică a Caracterelor)</h3>
+                <p>Recunoașterea textului de pe bonuri este realizată cu Apple Vision. Toată procesarea are loc local pe dispozitiv — nicio imagine sau text nu este trimis către servere externe.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Analiză și Raportare Erori</h3>
+                <p>Folosim Firebase Analytics și Firebase Crashlytics pentru a înțelege modul de utilizare al aplicației și pentru a remedia erorile. Aceste date sunt anonime și nu includ conținutul bonurilor sau informații financiare personale. <a href="https://policies.google.com/privacy" style="color: var(--green-dark);">Află mai multe despre practicile de confidențialitate Google</a>.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Servicii Terțe</h3>
+                <p>Aplicația utilizează următoarele servicii terțe:</p>
+                <ul>
+                    <li><strong>Firebase Analytics & Crashlytics</strong> — pentru analize anonimizate de utilizare și raportare de erori. Nu sunt colectate date personale identificabile.</li>
+                    <li><strong>Open Food Facts (openfoodfacts.org)</strong> — pentru căutarea produselor după cod de bare. Se transmite doar numărul codului de bare, fără date personale.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Achiziții în Aplicație</h3>
+                <p>Abonamentele sunt procesate prin App Store-ul Apple. Nu avem acces la informațiile tale de plată. Politica de confidențialitate Apple guvernează modul în care datele achizițiilor tale sunt gestionate.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>iCloud Backup (Pro)</h3>
+                <p>Funcția de backup iCloud, disponibilă în versiunea Pro, utilizează contul iCloud al utilizatorului pentru stocarea unei copii de siguranță. Datele sunt gestionate de Apple conform politicii de confidențialitate Apple și nu sunt accesibile dezvoltatorului.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Drepturile Tale</h3>
+                <p>Poți șterge toate datele tale oricând din Setări → Șterge Toate Datele. Deoarece datele sunt stocate local pe dispozitiv și în contul tău personal iCloud, ștergerea lor le elimină complet. Nu păstrăm nicio copie.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Fără Conturi</h3>
+                <p>Cheltu nu necesită și nu oferă funcționalitate de creare a unui cont. Nu se colectează adrese de email, numere de telefon sau alte date de identificare.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Confidențialitatea Copiilor</h3>
+                <p>Această aplicație nu este destinată copiilor sub 13 ani. Nu colectăm cu bună știință informații personale de la copii.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Modificări ale Politicii</h3>
+                <p>Este posibil să actualizăm această politică de confidențialitate periodic. Modificările vor fi reflectate pe această pagină cu o dată actualizată.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Contact</h3>
+                <p>Dacă ai întrebări despre această politică de confidențialitate, contactează-ne la: <a href="mailto:cheltuapp@gmail.com" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
+            </div>
         </div>
 
-        <div class="privacy-section">
-            <h3>Stocarea Datelor</h3>
-            <p>Toate datele bonurilor sunt stocate în siguranță pe dispozitivul tău și opțional în contul tău personal iCloud. Nu avem acces la datele tale.</p>
-        </div>
+        <!-- ENGLISH -->
+        <div id="privacy-en" class="terms-lang-content" style="display: none;">
+            <div class="privacy-section">
+                <h3>Data Collection</h3>
+                <p>We only collect data necessary for the receipt scanning service. Your receipt data is stored locally on your device and optionally synced with your personal iCloud account.</p>
+            </div>
 
-        <div class="privacy-section">
-            <h3>Cameră și Fotografii</h3>
-            <p>Aplicația folosește camera pentru a scana bonuri și coduri de bare. Fotografiile sunt procesate pe dispozitiv și nu sunt încărcate pe niciun server. Poți salva opțional fotografiile scanate în biblioteca foto.</p>
-        </div>
+            <div class="privacy-section">
+                <h3>Data Usage</h3>
+                <p>Your receipt data is used exclusively for app functionality. We do not sell, share, or transfer your personal data to third parties for marketing purposes.</p>
+            </div>
 
-        <div class="privacy-section">
-            <h3>Procesare OCR (Recunoaștere Optică a Caracterelor)</h3>
-            <p>Recunoașterea textului de pe bonuri este realizată cu Apple Vision. Toată procesarea are loc local pe dispozitiv — nicio imagine sau text nu este trimis către servere externe.</p>
-        </div>
+            <div class="privacy-section">
+                <h3>Data Storage</h3>
+                <p>All receipt data is stored securely on your device and optionally in your personal iCloud account. We do not have access to your data.</p>
+            </div>
 
-        <div class="privacy-section">
-            <h3>Analiză și Raportare Erori</h3>
-            <p>Folosim Firebase Analytics și Firebase Crashlytics pentru a înțelege modul de utilizare al aplicației și pentru a remedia erorile. Aceste date sunt anonime și nu includ conținutul bonurilor sau informații financiare personale. <a href="https://policies.google.com/privacy" style="color: var(--green-dark);">Află mai multe despre practicile de confidențialitate Google</a>.</p>
-        </div>
+            <div class="privacy-section">
+                <h3>Camera & Photos</h3>
+                <p>The app uses the camera to scan receipts and barcodes. Photos are processed on-device and are not uploaded to any server. You can optionally save scanned photos to your photo library.</p>
+            </div>
 
-        <div class="privacy-section">
-            <h3>Servicii Terțe</h3>
-            <p>Aplicația utilizează următoarele servicii terțe:</p>
-            <ul>
-                <li><strong>Firebase Analytics & Crashlytics</strong> — pentru analize anonimizate de utilizare și raportare de erori. Nu sunt colectate date personale identificabile.</li>
-                <li><strong>Open Food Facts (openfoodfacts.org)</strong> — pentru căutarea produselor după cod de bare. Se transmite doar numărul codului de bare, fără date personale.</li>
-            </ul>
-        </div>
+            <div class="privacy-section">
+                <h3>OCR Processing (Optical Character Recognition)</h3>
+                <p>Text recognition from receipts is performed using Apple Vision. All processing happens locally on your device — no images or text are sent to external servers.</p>
+            </div>
 
-        <div class="privacy-section">
-            <h3>Achiziții în Aplicație</h3>
-            <p>Abonamentele sunt procesate prin App Store-ul Apple. Nu avem acces la informațiile tale de plată. Politica de confidențialitate Apple guvernează modul în care datele achizițiilor tale sunt gestionate.</p>
-        </div>
+            <div class="privacy-section">
+                <h3>Analytics & Crash Reporting</h3>
+                <p>We use Firebase Analytics and Firebase Crashlytics to understand app usage and fix bugs. This data is anonymous and does not include receipt content or personal financial information. <a href="https://policies.google.com/privacy" style="color: var(--green-dark);">Learn more about Google's privacy practices</a>.</p>
+            </div>
 
-        <div class="privacy-section">
-            <h3>iCloud Backup (Pro)</h3>
-            <p>Funcția de backup iCloud, disponibilă în versiunea Pro, utilizează contul iCloud al utilizatorului pentru stocarea unei copii de siguranță. Datele sunt gestionate de Apple conform politicii de confidențialitate Apple și nu sunt accesibile dezvoltatorului.</p>
-        </div>
+            <div class="privacy-section">
+                <h3>Third-Party Services</h3>
+                <p>The app uses the following third-party services:</p>
+                <ul>
+                    <li><strong>Firebase Analytics & Crashlytics</strong> — for anonymized usage analytics and crash reporting. No personally identifiable data is collected.</li>
+                    <li><strong>Open Food Facts (openfoodfacts.org)</strong> — for product lookup by barcode. Only the barcode number is transmitted, with no personal data.</li>
+                </ul>
+            </div>
 
-        <div class="privacy-section">
-            <h3>Drepturile Tale</h3>
-            <p>Poți șterge toate datele tale oricând din Setări → Șterge Toate Datele. Deoarece datele sunt stocate local pe dispozitiv și în contul tău personal iCloud, ștergerea lor le elimină complet. Nu păstrăm nicio copie.</p>
-        </div>
+            <div class="privacy-section">
+                <h3>In-App Purchases</h3>
+                <p>Subscriptions are processed through the Apple App Store. We do not have access to your payment information. Apple's privacy policy governs how your purchase data is handled.</p>
+            </div>
 
-        <div class="privacy-section">
-            <h3>Fără Conturi</h3>
-            <p>Cheltu nu necesită și nu oferă funcționalitate de creare a unui cont. Nu se colectează adrese de email, numere de telefon sau alte date de identificare.</p>
-        </div>
+            <div class="privacy-section">
+                <h3>iCloud Backup (Pro)</h3>
+                <p>The iCloud backup feature, available in the Pro version, uses the user's iCloud account for storing a backup copy. Data is managed by Apple in accordance with Apple's privacy policy and is not accessible to the developer.</p>
+            </div>
 
-        <div class="privacy-section">
-            <h3>Confidențialitatea Copiilor</h3>
-            <p>Această aplicație nu este destinată copiilor sub 13 ani. Nu colectăm cu bună știință informații personale de la copii.</p>
-        </div>
+            <div class="privacy-section">
+                <h3>Your Rights</h3>
+                <p>You can delete all your data at any time from Settings → Clear All Data. Since data is stored locally on your device and in your personal iCloud account, deleting it removes it completely. We do not retain any copies.</p>
+            </div>
 
-        <div class="privacy-section">
-            <h3>Modificări ale Politicii</h3>
-            <p>Este posibil să actualizăm această politică de confidențialitate periodic. Modificările vor fi reflectate pe această pagină cu o dată actualizată.</p>
-        </div>
+            <div class="privacy-section">
+                <h3>No Accounts</h3>
+                <p>Cheltu does not require or offer account creation functionality. No email addresses, phone numbers, or other identifying data is collected.</p>
+            </div>
 
-        <div class="privacy-section">
-            <h3>Contact</h3>
-            <p>Dacă ai întrebări despre această politică de confidențialitate, contactează-ne la: <a href="/cdn-cgi/l/email-protection#f99a919c958d8c988989dfdacfcdc29e94989095dfdacdcfc29a9694" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
+            <div class="privacy-section">
+                <h3>Children's Privacy</h3>
+                <p>This app is not intended for children under 13 years of age. We do not knowingly collect personal information from children.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Policy Changes</h3>
+                <p>We may update this privacy policy periodically. Changes will be reflected on this page with an updated date.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>Contact</h3>
+                <p>If you have questions about this privacy policy, contact us at: <a href="mailto:cheltuapp@gmail.com" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
+            </div>
         </div>
     </section>
 
@@ -1346,9 +1431,15 @@
     function switchTermsLang(lang) {
         document.getElementById('terms-ro').style.display = lang === 'ro' ? 'block' : 'none';
         document.getElementById('terms-en').style.display = lang === 'en' ? 'block' : 'none';
-        document.querySelectorAll('.terms-lang-btn').forEach(function(btn) {
-            btn.classList.remove('active');
-        });
+        var btns = document.querySelector('#terms .terms-lang-toggle').querySelectorAll('.terms-lang-btn');
+        btns.forEach(function(btn) { btn.classList.remove('active'); });
+        event.target.classList.add('active');
+    }
+    function switchPrivacyLang(lang) {
+        document.getElementById('privacy-ro').style.display = lang === 'ro' ? 'block' : 'none';
+        document.getElementById('privacy-en').style.display = lang === 'en' ? 'block' : 'none';
+        var btns = document.querySelector('#privacy .terms-lang-toggle').querySelectorAll('.terms-lang-btn');
+        btns.forEach(function(btn) { btn.classList.remove('active'); });
         event.target.classList.add('active');
     }
     </script>

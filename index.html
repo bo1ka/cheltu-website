@@ -748,6 +748,34 @@
         }
         .privacy-section li { margin-bottom: 4px; }
 
+        /* ---- TERMS LANG TOGGLE ---- */
+        .terms-lang-toggle {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+        .terms-lang-btn {
+            padding: 8px 20px;
+            border-radius: 100px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-secondary);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .terms-lang-btn:hover {
+            border-color: var(--green);
+            color: var(--text);
+        }
+        .terms-lang-btn.active {
+            background: var(--green);
+            color: #fff;
+            border-color: var(--green);
+        }
+
         /* ---- FOOTER ---- */
         footer {
             padding: 40px 24px;
@@ -815,6 +843,7 @@
                 <a href="#faq">FAQ</a>
                 <a href="#support">Suport</a>
                 <a href="#privacy">Confidențialitate</a>
+                <a href="#terms">Termeni</a>
             </div>
         </div>
     </nav>
@@ -1147,5 +1176,182 @@
         </div>
     </section>
 
+    <!-- TERMS & CONDITIONS -->
+    <section class="privacy-policy" id="terms">
+        <h2>Termeni și Condiții <span style="font-size: 16px; font-weight: 400; color: var(--text-secondary);">/ Terms & Conditions</span></h2>
+        <p class="updated">Ultima actualizare / Last updated: Martie / March 2026</p>
+
+        <div class="terms-lang-toggle">
+            <button class="terms-lang-btn active" onclick="switchTermsLang('ro')">🇷🇴 Română</button>
+            <button class="terms-lang-btn" onclick="switchTermsLang('en')">🇬🇧 English</button>
+        </div>
+
+        <!-- ROMANIAN -->
+        <div id="terms-ro" class="terms-lang-content">
+            <div class="privacy-section">
+                <h3>1. Acceptarea Termenilor</h3>
+                <p>Prin descărcarea, instalarea sau utilizarea aplicației Cheltu („Aplicația"), accepți acești Termeni și Condiții. Dacă nu ești de acord cu acești termeni, te rugăm să nu utilizezi Aplicația.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>2. Descrierea Serviciului</h3>
+                <p>Cheltu este o aplicație de urmărire a cheltuielilor care permite scanarea bonurilor fiscale, gestionarea bugetului și analiza cheltuielilor. Aplicația procesează toate datele local pe dispozitivul tău și nu necesită crearea unui cont.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>3. Eligibilitate</h3>
+                <p>Trebuie să ai cel puțin 13 ani pentru a utiliza Aplicația. Prin utilizarea Aplicației, confirmi că îndeplinești această cerință de vârstă.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>4. Cheltu Pro — Abonamente cu Reînnoire Automată</h3>
+                <p>Cheltu oferă abonamente cu reînnoire automată prin intermediul App Store-ului Apple:</p>
+                <ul>
+                    <li><strong>Cheltu Pro — Lunar:</strong> 9,99 RON / lună</li>
+                    <li><strong>Cheltu Pro — Anual:</strong> 59,99 RON / an</li>
+                </ul>
+                <p style="margin-top: 12px;">Ambele abonamente includ o perioadă de încercare gratuită de 7 zile. Perioada de încercare gratuită începe imediat la activare. La sfârșitul perioadei de încercare, abonamentul se convertește automat în abonament plătit, cu excepția cazului în care este anulat cu cel puțin 24 de ore înainte de expirarea perioadei de încercare.</p>
+                <p style="margin-top: 12px;">Abonamentele se reînnoiesc automat la sfârșitul fiecărei perioade, cu excepția cazului în care sunt anulate cu cel puțin 24 de ore înainte de finalul perioadei curente. Contul tău Apple va fi debitat pentru reînnoire în ultimele 24 de ore ale perioadei curente.</p>
+                <p style="margin-top: 12px;">Funcționalitățile Cheltu Pro includ: analize lunare și anuale, comparații între perioade, backup iCloud și export de date în format CSV și PDF.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>5. Gestionarea Abonamentelor</h3>
+                <p>Poți gestiona sau anula abonamentul în orice moment din Setările dispozitivului tău → Apple ID → Abonamente. Anularea intră în vigoare la sfârșitul perioadei de facturare curente. Porțiunile neutilizate ale perioadei de încercare gratuite se pierd la achiziționarea unui abonament.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>6. Versiunea Gratuită</h3>
+                <p>Versiunea gratuită a aplicației Cheltu include: scanarea nelimitată a bonurilor, buget lunar cu urmărire în timp real, analize săptămânale, widget pe ecranul principal și backup local pe telefon.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>7. Datele Utilizatorului</h3>
+                <p>Toate datele generate prin utilizarea Aplicației (bonuri scanate, bugete, categorii) sunt stocate local pe dispozitivul tău. Cheltu nu are acces la aceste date. Ești singurul responsabil pentru crearea de copii de siguranță ale datelor tale. Ștergerea aplicației fără un backup prealabil va duce la pierderea permanentă a datelor.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>8. Precizia OCR</h3>
+                <p>Funcția de scanare a bonurilor utilizează tehnologia de recunoaștere optică a caracterelor (OCR) pentru a extrage informații de pe bonurile fiscale. Deși ne străduim să oferim o precizie ridicată, nu garantăm că datele extrase sunt 100% corecte. Verifică întotdeauna informațiile extrase înainte de a te baza pe ele în decizii financiare.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>9. Proprietate Intelectuală</h3>
+                <p>Aplicația Cheltu, inclusiv designul, codul sursă, graficele și conținutul, este protejată de drepturile de autor și de proprietate intelectuală. Nu este permisă copierea, modificarea, distribuirea sau ingineria inversă a Aplicației.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>10. Limitarea Răspunderii</h3>
+                <p>Aplicația este furnizată „ca atare", fără garanții de niciun fel. Nu suntem responsabili pentru pierderi financiare, pierderi de date sau alte daune rezultate din utilizarea Aplicației. Cheltu nu oferă consiliere financiară — informațiile afișate sunt doar în scop informativ.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>11. Modificări ale Termenilor</h3>
+                <p>Ne rezervăm dreptul de a actualiza acești Termeni și Condiții. Modificările vor fi reflectate pe această pagină cu o dată actualizată. Continuarea utilizării Aplicației după orice modificare constituie acceptarea noilor termeni.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>12. Legislație Aplicabilă</h3>
+                <p>Acești termeni sunt guvernați de legislația României. Orice disputuri vor fi soluționate de instanțele competente din România.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>13. Contact</h3>
+                <p>Dacă ai întrebări despre acești Termeni și Condiții, contactează-ne la: <a href="mailto:cheltuapp@gmail.com" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
+            </div>
+        </div>
+
+        <!-- ENGLISH -->
+        <div id="terms-en" class="terms-lang-content" style="display: none;">
+            <div class="privacy-section">
+                <h3>1. Acceptance of Terms</h3>
+                <p>By downloading, installing, or using the Cheltu application ("the App"), you agree to these Terms and Conditions. If you do not agree with these terms, please do not use the App.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>2. Description of Service</h3>
+                <p>Cheltu is an expense tracking application that allows you to scan receipts, manage your budget, and analyze your spending. The App processes all data locally on your device and does not require creating an account.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>3. Eligibility</h3>
+                <p>You must be at least 13 years old to use the App. By using the App, you confirm that you meet this age requirement.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>4. Cheltu Pro — Auto-Renewable Subscriptions</h3>
+                <p>Cheltu offers auto-renewable subscriptions through the Apple App Store:</p>
+                <ul>
+                    <li><strong>Cheltu Pro — Monthly:</strong> 9.99 RON / month</li>
+                    <li><strong>Cheltu Pro — Yearly:</strong> 59.99 RON / year</li>
+                </ul>
+                <p style="margin-top: 12px;">Both subscriptions include a 7-day free trial. The free trial begins immediately upon activation. At the end of the trial period, the subscription automatically converts to a paid subscription unless cancelled at least 24 hours before the trial period expires.</p>
+                <p style="margin-top: 12px;">Subscriptions automatically renew at the end of each period unless cancelled at least 24 hours before the end of the current period. Your Apple account will be charged for renewal within 24 hours prior to the end of the current period.</p>
+                <p style="margin-top: 12px;">Cheltu Pro features include: monthly and yearly analytics, period-over-period comparisons, iCloud backup, and data export in CSV and PDF formats.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>5. Managing Subscriptions</h3>
+                <p>You can manage or cancel your subscription at any time from your device Settings → Apple ID → Subscriptions. Cancellation takes effect at the end of the current billing period. Any unused portion of a free trial is forfeited upon purchasing a subscription.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>6. Free Version</h3>
+                <p>The free version of Cheltu includes: unlimited receipt scanning, monthly budget with real-time tracking, weekly analytics, home screen widget, and local backup on your device.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>7. User Data</h3>
+                <p>All data generated through the use of the App (scanned receipts, budgets, categories) is stored locally on your device. Cheltu does not have access to this data. You are solely responsible for backing up your data. Deleting the app without a prior backup will result in permanent data loss.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>8. OCR Accuracy</h3>
+                <p>The receipt scanning feature uses Optical Character Recognition (OCR) technology to extract information from receipts. While we strive to provide high accuracy, we do not guarantee that the extracted data is 100% correct. Always verify extracted information before relying on it for financial decisions.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>9. Intellectual Property</h3>
+                <p>The Cheltu application, including its design, source code, graphics, and content, is protected by copyright and intellectual property rights. Copying, modifying, distributing, or reverse engineering the App is not permitted.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>10. Limitation of Liability</h3>
+                <p>The App is provided "as is" without warranties of any kind. We are not responsible for financial losses, data loss, or other damages resulting from the use of the App. Cheltu does not provide financial advice — the information displayed is for informational purposes only.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>11. Changes to Terms</h3>
+                <p>We reserve the right to update these Terms and Conditions. Changes will be reflected on this page with an updated date. Continued use of the App after any changes constitutes acceptance of the new terms.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>12. Governing Law</h3>
+                <p>These terms are governed by the laws of Romania. Any disputes will be resolved by the competent courts in Romania.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>13. Contact</h3>
+                <p>If you have questions about these Terms and Conditions, contact us at: <a href="mailto:cheltuapp@gmail.com" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
-    <foote
+    <footer>
+        <p>&copy; 2026 Cheltu. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+    function switchTermsLang(lang) {
+        document.getElementById('terms-ro').style.display = lang === 'ro' ? 'block' : 'none';
+        document.getElementById('terms-en').style.display = lang === 'en' ? 'block' : 'none';
+        document.querySelectorAll('.terms-lang-btn').forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+        event.target.classList.add('active');
+    }
+    </script>
+
+</body>
+</html>

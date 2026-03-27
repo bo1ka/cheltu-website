@@ -221,39 +221,17 @@
             margin: 0 auto 36px;
             line-height: 1.6;
         }
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--text);
-            color: #fff;
-            text-decoration: none;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 15px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
+        .hero-cta-badge {
+            display: inline-block;
+            transition: transform 0.3s, opacity 0.3s;
         }
-        .hero-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s;
-        }
-        .hero-cta:hover::before {
-            left: 100%;
-        }
-        .hero-cta:hover {
+        .hero-cta-badge:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+            opacity: 0.9;
         }
-        .hero-cta svg { width: 20px; height: 20px; }
+        .hero-cta-badge img {
+            display: block;
+        }
 
         .hero-pills {
             display: flex;
@@ -825,12 +803,12 @@
             from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .hero-badge, .hero h1, .hero p, .hero-cta, .hero-pills {
+        .hero-badge, .hero h1, .hero p, .hero-cta-badge, .hero-pills {
             animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
         }
         .hero h1 { animation-delay: 0.15s; }
         .hero p { animation-delay: 0.3s; }
-        .hero-cta { animation-delay: 0.45s; }
+        .hero-cta-badge { animation-delay: 0.45s; }
         .hero-pills { animation-delay: 0.6s; }
     </style>
 </head>
@@ -864,9 +842,8 @@
         </div>
         <h1>Știi exact pe ce<br>se duc <span>banii</span> tăi?</h1>
         <p>Scanează bonuri fiscale, urmărește cheltuielile și preia controlul bugetului tău lunar. Totul pe telefonul tău.</p>
-        <a href="https://apps.apple.com/app/id6760303155" class="hero-cta">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            Descarcă din App Store
+        <a href="https://apps.apple.com/app/id6760303155" class="hero-cta-badge">
+            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/ro-ro" alt="Descarcă din App Store" style="height: 54px;">
         </a>
     </section>
 
@@ -1183,7 +1160,7 @@
 
             <div class="privacy-section">
                 <h3>Contact</h3>
-                <p>Dacă ai întrebări despre această politică de confidențialitate, contactează-ne la: <a href="mailto:cheltuapp@gmail.com" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
+                <p>Dacă ai întrebări despre această politică de confidențialitate, contactează-ne la: <a href="/cdn-cgi/l/email-protection#dfbcb7bab3abaabeafaf9fb8b2beb6b3f1bcb0b2" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
             </div>
         </div>
 
@@ -1260,7 +1237,7 @@
 
             <div class="privacy-section">
                 <h3>Contact</h3>
-                <p>If you have questions about this privacy policy, contact us at: <a href="mailto:cheltuapp@gmail.com" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
+                <p>If you have questions about this privacy policy, contact us at: <a href="/cdn-cgi/l/email-protection#24474c41485051455454644349454d480a474b49" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
             </div>
         </div>
     </section>
@@ -1346,7 +1323,7 @@
 
             <div class="privacy-section">
                 <h3>13. Contact</h3>
-                <p>Dacă ai întrebări despre acești Termeni și Condiții, contactează-ne la: <a href="mailto:cheltuapp@gmail.com" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
+                <p>Dacă ai întrebări despre acești Termeni și Condiții, contactează-ne la: <a href="/cdn-cgi/l/email-protection#b1d2d9d4ddc5c4d0c1c1f1d6dcd0d8dd9fd2dedc" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
             </div>
         </div>
 
@@ -1421,7 +1398,7 @@
 
             <div class="privacy-section">
                 <h3>13. Contact</h3>
-                <p>If you have questions about these Terms and Conditions, contact us at: <a href="mailto:cheltuapp@gmail.com" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
+                <p>If you have questions about these Terms and Conditions, contact us at: <a href="/cdn-cgi/l/email-protection#eb88838e879f9e8a9b9bab8c868a8287c5888486" style="color: var(--green-dark);">cheltuapp&#64;gmail&#46;com</a></p>
             </div>
         </div>
     </section>
@@ -1431,7 +1408,7 @@
         <p>&copy; 2026 Cheltu. Toate drepturile rezervate.</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function switchTermsLang(lang) {
         document.getElementById('terms-ro').style.display = lang === 'ro' ? 'block' : 'none';
         document.getElementById('terms-en').style.display = lang === 'en' ? 'block' : 'none';
@@ -1441,12 +1418,4 @@
     }
     function switchPrivacyLang(lang) {
         document.getElementById('privacy-ro').style.display = lang === 'ro' ? 'block' : 'none';
-        document.getElementById('privacy-en').style.display = lang === 'en' ? 'block' : 'none';
-        var btns = document.querySelector('#privacy .terms-lang-toggle').querySelectorAll('.terms-lang-btn');
-        btns.forEach(function(btn) { btn.classList.remove('active'); });
-        event.target.classList.add('active');
-    }
-    </script>
-
-</body>
-</html>
+        document.getElementById('privacy-en').style.display = lang === 'en' ? 'block'

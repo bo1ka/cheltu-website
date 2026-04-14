@@ -843,7 +843,7 @@
         </div>
         <h1>Știi exact pe ce<br>se duc <span>banii</span> tăi?</h1>
         <p>Scanează bonuri fiscale, urmărește cheltuielile și preia controlul bugetului tău lunar. Totul pe telefonul tău.</p>
-        <a href="https://apps.apple.com/app/id6760303155" class="hero-cta-badge">
+        <a href="https://apps.apple.com/ro/app/cheltu-scanare-bonuri/id6760303155" class="hero-cta-badge">
             <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/ro-ro" alt="Descarcă din App Store" style="height: 54px;">
         </a>
     </section>
@@ -1439,4 +1439,11 @@
     }
     function switchPrivacyLang(lang) {
         document.getElementById('privacy-ro').style.display = lang === 'ro' ? 'block' : 'none';
-        document.getElementById('privacy-en').style.display = lang === 'en' ? 'block'
+        document.getElementById('privacy-en').style.display = lang === 'en' ? 'block' : 'none';
+        var btns = document.querySelector('#privacy .terms-lang-toggle').querySelectorAll('.terms-lang-btn');
+        btns.forEach(function(btn) { btn.classList.remove('active'); });
+        event.target.classList.add('active');
+    }
+    </script>
+</body>
+</html>

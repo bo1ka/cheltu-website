@@ -1,0 +1,8 @@
+# Claude / Cowork working files
+.claude/
+
+# FUSE filesystem leftovers
+.fuse_hidden*
+
+# macOS
+.DS_Store

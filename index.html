@@ -1461,6 +1461,69 @@
         event.target.classList.add('active');
     }
     </script>
+    <!-- Auto-load the latest release notes from the App Store (so the newest "Noutăți" entry never needs manual editing) -->
+    <script>
+    (async function loadLatestRelease() {
+        try {
+            const APP_ID = "6760303155";
+            const res = await fetch(`https://itunes.apple.com/lookup?id=${APP_ID}&country=ro&t=${Date.now()}`);
+            const app = (await res.json()).results[0];
+            if (!app || !app.releaseNotes) return;
+
+            const section = document.querySelector("#whats-new");
+            if (!section) return;
+
+            // Don't duplicate a version that's already hardcoded in the static history.
+            const existing = [...section.querySelectorAll(".update-version")]
+                .some(el => el.textContent.trim().replace(/^v/i, "") === app.version);
+            if (existing) return;
+
+            let date = new Date(app.currentVersionReleaseDate)
+                .toLocaleDateString("ro-RO", { month: "long", year: "numeric" });
+            date = date.charAt(0).toUpperCase() + date.slice(1);
+
+            const notes = app.releaseNotes
+                .split("\n")
+                .map(l => l.replace(/^[-•]\s*/, "").trim())
+                .filter(Boolean);
+
+            const item = document.createElement("div");
+            item.className = "update-item";
+            item.setAttribute("data-auto", "appstore");
+            const header = document.createElement("div");
+            header.className = "update-header";
+            const ver = document.createElement("span");
+            ver.className = "update-version";
+            ver.textContent = "v" + app.version;
+            const dt = document.createElement("span");
+            dt.className = "update-date";
+            dt.textContent = date;
+            header.append(ver, dt);
+            const ul = document.createElement("ul");
+            notes.forEach(n => {
+                const li = document.createElement("li");
+                li.textContent = n; // textContent avoids any HTML injection from store notes
+                ul.appendChild(li);
+            });
+            item.append(header, ul);
+
+            // Insert above the static history (right after the intro paragraph).
+            const intro = section.querySelector("p");
+            if (intro) intro.after(item); else section.appendChild(item);
+        } catch (e) {
+            // Fail silently — the static entries remain as a fallback.
+        } finally {
+            // Keep the section bounded: only show the most recent N releases.
+            // Set MAX_VISIBLE to 1 to show just the latest release.
+            const MAX_VISIBLE = 1;
+            const section = document.querySelector("#whats-new");
+            if (section) {
+                section.querySelectorAll(".update-item")
+                    .forEach((el, i) => { el.style.display = i < MAX_VISIBLE ? "" : "none"; });
+            }
+        }
+    })();
+    </script>
     <!-- Cloudflare Web Analytics — cookieless, privacy-first -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
             data-cf-beacon='{"token": "47d68d8b98ce4c66b4be34bbd58e87f0"}'></script>

@@ -1729,7 +1729,7 @@
     (async function loadLatestRelease() {
         try {
             const APP_ID = "6760303155";
-            const res = await fetch(`https://itunes.apple.com/lookup?id=${APP_ID}&country=ro&t=${Date.now()}`);
+            const res = await fetch(`https://itunes.apple.com/lookup?id=${APP_ID}&country=ro&lang=ro_ro&t=${Date.now()}`);
             const app = (await res.json()).results[0];
             if (!app || !app.releaseNotes) return;
 

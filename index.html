@@ -102,7 +102,8 @@
         .proof li { padding-right: 18px; margin-right: 18px; border-right: 1px solid var(--rule); }
         .proof li:last-child { border: 0; margin: 0; padding: 0; }
         .proof b { color: var(--ink); font-weight: 700; }
-        .proof .star { color: #E3A008; }
+        .proof .star { color: #E3A008; letter-spacing: 1px; margin-right: 3px; }
+        .proof .count { font-variant-numeric: tabular-nums; }
         .proof { align-items: center; }
         .nocont {
             white-space: nowrap; display: inline-block;
@@ -369,6 +370,8 @@
             .receipt-wrap { left: 4%; top: 26px; width: 232px; }
             .parsed { right: 4%; bottom: 24px; width: 236px; padding: 18px; }
             .privacy-policy { padding: 44px 20px 0; }
+            .proof { gap: 6px 0; }
+            .proof li { border-right: 0; padding-right: 0; margin-right: 22px; }
         }
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
@@ -407,8 +410,8 @@
                         <span class="nocont">Fără cont</span>
                     </div>
                     <ul class="proof">
-                        <li><b>5,0</b> <span class="star" aria-hidden="true">★</span> pe App Store</li>
-                        <li><b>5.100+</b> bonuri scanate</li>
+                        <li><span class="star" aria-hidden="true">★★★★★</span> <b>5,0</b> pe App Store</li>
+                        <li><b class="count" data-count="5700">5.700+</b> bonuri scanate</li>
                     </ul>
                 </div>
 
@@ -1231,6 +1234,23 @@
         </div>
     </footer>
 
+    <script>
+    (function() {
+        var el = document.querySelector('.count[data-count]');
+        if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var target = parseInt(el.getAttribute('data-count'), 10), start = null, duration = 1600;
+        var fmt = function(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); };
+        function step(ts) {
+            if (start === null) start = ts;
+            var p = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = fmt(Math.round(target * eased)) + (p === 1 ? '+' : '');
+            if (p < 1) requestAnimationFrame(step);
+        }
+        el.textContent = '0';
+        requestAnimationFrame(step);
+    })();
+    </script>
     <script>
     var LEGAL_LANGS = ['ro', 'en', 'it'];
     function setLegalLang(section, lang) {
